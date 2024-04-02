@@ -9,7 +9,7 @@ namespace Domain.ValueObject
     public class FullName : BaseValueObject
     {
         /// <summary>
-        /// ToDo. Описать
+        /// ToDo. Описать.
         /// </summary>
         public FullName(string firstName, string lastName, string middleName)
         {
