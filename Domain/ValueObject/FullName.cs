@@ -8,9 +8,9 @@ namespace Domain.ValueObject
 {     /* описать */
     public class FullName : BaseValueObject
     {
-
+        /// <summary>
         /// ToDo. Описать
-
+        /// </summary>
         public FullName(string firstName, string lastName, string middleName)
         {
             FirstName = firstName;

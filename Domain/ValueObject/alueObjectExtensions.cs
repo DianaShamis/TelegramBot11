@@ -11,7 +11,7 @@ namespace Domain.ValueObject
         // Реализация глубокого сравнения объектов по данным.
         public static bool DeepEquals(this BaseValueObject obj, BaseValueObject another)
         {
-            // Проверка на ссылочное равенство и на null
+            // Проверка на ссылочное равенство и на null.
             if (ReferenceEquals(obj, another)) return true;
             if ((obj == null) || (another == null)) return false;
             if (obj.GetType() != another.GetType()) return false;
