@@ -9,14 +9,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-
-// ToDo: Добавить валидацию допускающаю только русские или английские буквы
-
-// ToDo: Сделать валидацию для всех остальных. Для DateTime 150 лет максимум,
-// Gender проверка не undefined, по Telegram есть ли  @ ник не больше 20 символов,
-// номер телефона начинается с +37377 , 123 не допускается, 5 цифр после
-
-// ToDo: * FluentValitaton
+// To Do: Провалидировать все поля как FullNameValidation
+// перенести на FluentValitaton
 namespace Domain.Entities
 {
     public class Person: BaseEntity
@@ -35,6 +29,11 @@ namespace Domain.Entities
         public Gender Gender { get; private set; }
         public string PhoneNumber { get; private set; }
         public string Telegram { get; private set; }
+
+        /// <summary>
+        /// Доп поля
+        /// </summary>
+        public List<CustomField<string>> CustomFields { get; set; }
 
         /// Валидация ФИО (имени, фамилии и отчества)
         private FullName ValidateFullName(FullName fullName)

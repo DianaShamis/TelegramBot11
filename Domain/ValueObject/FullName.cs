@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Validators;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,8 @@ namespace Domain.ValueObject
         /// </summary>
         public FullName(string firstName, string lastName, string middleName)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            MiddleName = middleName;
+            var validator = new FullNameValidator();
+            validator.Validate(this);
         }
         public string FirstName { get; set; }
         public string LastName { get; set; }
